@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kebudayaan Indonesia</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: url('merahputih.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            background-color: #000000;
+            padding: 10px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .content h2 {
+            margin-top: 0;
+            color: #faf9fb;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            cursor: pointer;
+            width: 300px;
+            text-align: left;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body h3 {
+            margin: 0;
+            color: #e74c3c;
+        }
+
+        .card-body p {
+            margin: 10px 0 0;
+            color: #333;
+        }
+
+        .btn-hotel {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            padding: 10px 0;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn-hotel:hover {
+            background-color: #c0392b;
+        }
+
+        /* Styles for the modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 700px;
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Destination</a></li>
+                <li><a href="hotels.html">Hotel</a></li>
+            </ul>
+        </nav>
+        <img src="wonderfulindonesia.jpg" alt="Logo" class="logo">
+    </header>
+    <section class="content">
+        <h2>Tempat Wisata Rekomendasi</h2>
+        <div class="gallery">
+            <div class="card" onclick="openModal('modal1')">
+                <img src="jakarta2.jpg" alt="Kota Tua Jakarta">
+                <div class="card-body">
+                    <h3>Kota Tua, West Jakarta City, DKI Jakarta</h3>
+                    <a href="hotels.html" class="btn-hotel">Lihat Hotel Terdekat</a>
+                </div>
+            </div>
+            <div class="card" onclick="openModal('modal2')">
+                <img src="wisatabandung.jpg" alt="Wisata Bandung">
+                <div class="card-body">
+                    <h3>Orchid Forest Cikole, Kabupaten Bandung Barat.</h3>
+                    <a href="hotels.html" class="btn-hotel">Lihat Hotel Terdekat</a>
+                </div>
+            </div>
+            <div class="card" onclick="openModal('modal3')">
+                <img src="candiborobudur.webp" alt="Candi Borobudur">
+                <div class="card-body">
+                    <h3>Candi Borobudur , Magelang, Jawa Tengah.</h3>
+                    <a href="hotels.html" class="btn-hotel">Lihat Hotel Terdekat</a>
+                </div>
+            </div>
+            <div class="card" onclick="openModal('modal4')">
+                <img src="puralempuyang.jpg" alt="Pura Lempuyang">
+                <div class="card-body">
+                    <h3>Pura Penataran Agung Lempuyang , Bali</h3>
+                    <a href="hotels.html" class="btn-hotel">Lihat Hotel Terdekat</a>
+                </div>
+            </div>
+            <!-- Tambahkan lebih banyak card sesuai kebutuhan -->
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Kota Tua Jakarta</h2>
+            <img src="jakarta2.jpg" alt="Kota Tua Jakarta">
+            <p>Kota Tua Jakarta, atau "Old Batavia," mempesona wisatawan dengan bangunan kolonial Belanda yang megah dan suasana yang mengajak Anda melangkah ke masa lalu. Di sini, Anda bisa menjelajahi Museum Fatahillah yang bersejarah, menikmati seni jalanan, atau mencicipi kuliner khas di kafe-kafe tempo dulu. Kawasan ini hidup dengan aktivitas menarik, seperti pertunjukan seni dan pasar malam, menjadikannya destinasi wajib bagi siapa pun yang ingin merasakan keindahan sejarah dan budaya Jakarta.</p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Orchid Forest Cikole</h2>
+            <img src="wisatabandung.jpg" alt="Wisata Bandung">
+            <p>Orchid Forest Cikole merupakan tempat wisata yang terletak di Genteng, Cikole, Lembang, Kabupaten Bandung Barat. Kawasan Orchid Forest merupakan Taman Konservasi Anggrek beserta hutan pinus di sekitarnya dengan luas lebih dari 12 hektar menjadikan Orchid Forest Cikole sebagai Taman Konservasi Anggrek terbesar di Indonesia. Untuk tiket masuk yang harus dibayar pun tidaklah mahal, cukup mengeluarkan uang sebesar Rp. 40.000 saja untuk domestik dan Rp. 100.000 untuk mancanegara, kalian bisa merasakan segarnya alam di daerah Cikole, Bandung.</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Candi Borobudur</h2>
+            <img src="candiborobudur.webp" alt="Candi Borobudur">
+            <p>Candi Borobudur (bahasa Jawa: ꦕꦟ꧀ꦝꦶꦧꦫꦧꦸꦝꦸꦂ, translit. Candhi Båråbudhur) adalah sebuah candi Buddha yang terletak di Borobudur, Magelang, Jawa Tengah, Indonesia. Candi ini terletak kurang lebih 100 km di sebelah barat daya Semarang, 86 km di sebelah barat Surakarta, dan 40 km di sebelah barat laut Yogyakarta. Candi dengan banyak stupa ini didirikan oleh para penganut agama Buddha Mahayana sekitar tahun 800-an Masehi pada masa pemerintahan wangsa Syailendra. Borobudur adalah candi atau kuil Buddha terbesar di dunia, sekaligus salah satu monumen Buddha terbesar di dunia.</p>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h2>Pura Penataran Agung Lempuyang</h2>
+            <img src="puralempuyang.jpg" alt="Pura Lempuyang">
+            <p>Pura Penataran Agung Lempuyang adalah sebuah pura yang terletak di lereng Gunung Lempuyang di Karangasem, Bali. Pura Penataran Agung Lempuyang dianggap sebagai bagian dari kompleks pura di sekitar Gunung Lempuyang, salah satu pura yang sangat dihormati di Bali. Pura-pura di Gunung Lempuyang, yang diwakili oleh pura tertinggi di puncak Gunung Lempuyang, Pura Lempuyang Luhur, merupakan salah satu Sad Kahyangan Jagad, atau "enam tempat suci dunia", enam tempat sembahyang paling suci di Bali.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modals = document.getElementsByClassName('modal');
+            for (var i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

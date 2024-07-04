@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Hotel di Indonesia</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: url('merahputih.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            background-color: #000000;
+            padding: 10px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .content h2 {
+            margin-top: 0;
+            color: #ffffff;
+        }
+
+        .hotel-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .hotel-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            text-align: left;
+            transition: transform 0.2s;
+        }
+
+        .hotel-card:hover {
+            transform: scale(1.05);
+        }
+
+        .hotel-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .hotel-card-body {
+            padding: 20px;
+        }
+
+        .hotel-card-body h3 {
+            margin: 0;
+            color: #e74c3c;
+        }
+
+        .hotel-card-body p {
+            margin: 10px 0 0;
+            color: #333;
+        }
+
+        .hotel-card-body .price {
+            font-weight: bold;
+            color: #9a281b;
+        }
+
+        .hotel-card-body .book-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #9a281b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .map {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .map iframe {
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Destination</a></li>
+                <li><a href="hotels.html">Hotel</a></li>
+            </ul>
+        </nav>
+        <img src="wonderfulindonesia.jpg" alt="Logo" class="logo">  
+    </header>
+    <section class="content">
+        <h2>Daftar Hotel Rekomendasi</h2>
+        <div class="hotel-list">
+            <div class="hotel-card">
+                <img src="rits.jpg" alt="Hotel Jakarta">
+                <div class="hotel-card-body">
+                    <h3>Ritz-Carlton</h3>
+                    <p>Alamat: Sudirman Central Business District, Jl. Jend. Sudirman kav 52-53, Senayan, Kebayoran Baru, Jakarta, 12190, Indonesia</p>
+                    <p>Harga: <span class="price">Rp 5.868.500/malam</span></p>
+                    <p>Fasilitas: Wi-Fi, Outdoor Pool, Spa, Restoran, Laundry, Airport Shuttle</p>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3432.970047174093!2d106.80903325645501!3d-6.2252899455440405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1513cd1c841%3A0x8326e31e66968696!2sThe%20Ritz-Carlton%20Jakarta%2C%20Pacific%20Place!5e0!3m2!1sen!2sus!4v1720033754271!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <a href="booking.html" class="book-button">Booking Hotel</a>
+                </div>
+            </div>
+            <div class="hotel-card">
+                <img src="padmahotel.jpg" alt="Hotel Bandung">
+                <div class="hotel-card-body">
+                    <h3>Padma Hotel Bandung</h3>
+                    <p>Alamat: Jl. Rancabentang No.56-58, Ciumbuleuit, Kec. Cidadap, Kota Bandung, Jawa Barat 40142</p>
+                    <p>Harga: <span class="price">Rp 3.003.000/malam</span></p>
+                    <p>Fasilitas: Wi-Fi, Hot Tub, Bar, Restoran, Outdoor Pool, Fitness center, Free Breakfast</p>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d832.7431966813176!2d107.60855623344733!3d-6.864634288198784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f171544a13a1%3A0xdde9b90dc7cb3332!2sPadma%20Hotel%20Bandung!5e0!3m2!1sen!2sid!4v1720033902971!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <a href="booking.html" class="book-button">Booking Hotel</a>
+                </div>
+            </div>
+            <div class="hotel-card">
+                <img src="Marriotthotel.jpg" alt="Hotel Yogyakarta">
+                <div class="hotel-card-body">
+                    <h3>Yogyakarta Marriott Hotel</h3>
+                    <p>Alamat: Jl. Ring Road Utara, Kaliwaru, Condongcatur, Kec. Depok, Yogyakarta, Daerah Istimewa Yogyakarta 55283</p>
+                    <p>Harga: <span class="price">Rp 1.452.000/malam</span></p>
+                    <p>Fasilitas: Wi-Fi, Outdoor Pool, Fitness Center, Spa, Bar, Restoran</p>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15813.062522972483!2d110.3984766!3d-7.7616287!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59a31713c041%3A0x1d724184969b4ac8!2sYogyakarta%20Marriott%20Hotel!5e0!3m2!1sen!2sid!4v1720034177098!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <a href="booking.html" class="book-button">Booking Hotel</a>
+                </div>
+            </div>
+            <div class="hotel-card">
+                <img src="padmahotel.jpg" alt="Hotel Bali">
+                <div class="hotel-card-body">
+                    <h3>Prama Sanur Beach Hotel Bali</h3>
+                    <p>Alamat: Jalan Cemara Sanur, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228</p>
+                    <p>Harga: <span class="price">Rp 1.588.309/malam</span></p>
+                    <p>Fasilitas: Wi-Fi,Breakfast, Beach Access, Spa, Bar, Restoran</p>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37519.73924999575!2d115.2010236879076!3d-8.712735274053925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd24195a152d397%3A0x3210af7ce6be459a!2sPrama%20Sanur%20Beach%20Hotel%20Bali!5e0!3m2!1sen!2sid!4v1720036920339!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <a href="booking.html" class="book-button">Booking Hotel</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
